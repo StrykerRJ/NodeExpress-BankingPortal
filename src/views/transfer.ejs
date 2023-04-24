@@ -7,22 +7,18 @@
   <% } %>
   <span class="error"></span>
 
-  <form method="POST" action="/transfer">
-    <label for="from">From Account:</label>
-    <select name="from" id="from">
-      <option value="savings">Savings ($<%= accounts.savings.balance %>)</option>
-      <option value="checking">Checking ($<%= accounts.checking.balance %>)</option>
+  <form id="transferForm" action="/transfer"method="post">
+    <span>Transfer From: </span> 
+    <select id="from" name="from" required>
+      <option value="checking">Checking</option>
+      <option value="savings">Savings</option>
     </select>
-    <br><br>
-    <label for="to">To Account:</label>
-    <select name="to" id="to">
-      <option value="savings">Savings ($<%= accounts.savings.balance %>)</option>
-      <option value="checking">Checking ($<%= accounts.checking.balance %>)</option>
+    <span> to: </span>
+    <select id="to" name="to" required>
+      <option value="checking">Checking</option>
+      <option value="savings">Savings</option>
     </select>
-    <br><br>
-    <label for="amount">Amount:</label>
-    <input type="number" name="amount" id="amount">
-    <br><br>
+    <input type="number" name="amount" id="amount" required placeholder="amount" step="0.01">
     <button type="submit">Transfer</button>
   </form>
 

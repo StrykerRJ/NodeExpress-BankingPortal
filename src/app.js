@@ -39,9 +39,7 @@ app.get('/profile', (req, res) => {
   res.render('profile', { user: users[0] });
 });
 
-app.get('/transfer', (req, res) => {
-  res.render('transfer', { accounts: accounts });
-});
+app.get('/transfer', (req, res) => res.render('transfer'));
 
 app.post('/transfer', (req, res) => {
   const { from, to, amount } = req.body;
